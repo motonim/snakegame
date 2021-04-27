@@ -2,6 +2,7 @@ const grid = document.querySelector('.grid');
 const startButton = document.querySelector('#start');
 const score = document.getElementById('score');
 let squares = [];
+let currentSnake = [0, 1, 2];
 
 function createGrid() {
   //create 100 of these elements with a for loop
@@ -21,3 +22,5 @@ function createGrid() {
 }
 
 createGrid();
+
+currentSnake.forEach((index) => squares[index].classList.add('snake'));
