@@ -39,3 +39,7 @@ function move() {
 }
 
 move();
+
+let timerId = setInterval(move, 1000);
+
+// clearInterval(timerId);
