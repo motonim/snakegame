@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+}
+
+.grid div {
+  width: 20px;
+  height: 20px;
+}
