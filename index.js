@@ -43,3 +43,17 @@ move();
 let timerId = setInterval(move, 1000);
 
 // clearInterval(timerId);
+
+function control(e) {
+  if (e.key === 'ArrowRight') {
+    direction = 1;
+  } else if (e.key === 'ArrowUp') {
+    direction = -10;
+  } else if (e.key === 'ArrowLeft') {
+    direction = -1;
+  } else if (e.key === 'ArrowDown') {
+    direction = 10;
+  }
+}
+
+document.addEventListener('keyup', control);
