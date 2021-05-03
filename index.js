@@ -27,6 +27,20 @@ createGrid();
 currentSnake.forEach((index) => squares[index].classList.add('snake'));
 
 function move() {
+  if (
+    // if snake has hit bottom
+    (currentSnake[0] + 10 >= 100 && direction === 10) ||
+    // if snake has hit right wall
+    (currentSnake[0] % 10 === 9 && direction === 1) ||
+    // if snake has hit left wall
+    (currentSnake[0] % 10 === 0 && direction === -1) ||
+    // if snake has hit top
+    (currentSnake[0] - 10 < 0 && direction === -10) ||
+    // if it hits itself
+    squares[currentSnake[0] + direction].classList.contains('snake')
+  )
+    return clearInterval(timerId);
+
   // remove last element from the currentSnake array
   const tail = currentSnake.pop();
   // console.log(tail);
@@ -56,4 +70,6 @@ function control(e) {
   }
 }
 
-document.addEventListener('keyup', control);
+document.addEventListener('keydown', control);
+
+// the modulus(%) operator returns the remainder of the division
