@@ -4,7 +4,6 @@ const score = document.getElementById('score');
 let squares = [];
 let currentSnake = [2, 1, 0];
 let direction = 1;
-const jaeri = 1;
 
 function createGrid() {
   //create 100 of these elements with a for loop
