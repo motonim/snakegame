@@ -5,7 +5,7 @@ let squares = [];
 let currentSnake = [2, 1, 0];
 let direction = 1;
 const width = 10;
-const jaeri = 1;
+let appleIndex = 0;
 
 function createGrid() {
   //create 100 of these elements with a for loop
@@ -57,6 +57,16 @@ function move() {
 move();
 
 let timerId = setInterval(move, 1000);
+
+function generateApple() {
+  do {
+    appleIndex = Math.floor(Math.random() * squares.length)
+  } while (squares[appleIndex].classList.contains('.snake'))
+  squares[appleIndex].classList.add('apple')
+}
+
+generateApple();
+
 
 // clearInterval(timerId);
 
